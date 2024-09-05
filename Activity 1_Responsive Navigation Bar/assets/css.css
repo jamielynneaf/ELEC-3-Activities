@@ -1,0 +1,102 @@
+/* Basic reset to remove default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Font Styling */
+@font-face {
+    font-family: CourierPrime;
+    src: url(./CourierPrime-Regular.ttf);
+}
+
+/* Body styling */
+body {
+    font-family: CourierPrime;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #db7777;
+    width: 100%;
+    max-width: 800px; /* Maximum width of the navbar */
+    margin: 0 auto; /* Centering the navbar */
+}
+
+/* Navigation list styling */
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around; /* Spacing between nav items */
+}
+
+/* Navigation item styling */
+.nav-item a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Change nav items' text color when user hovers over it */
+.nav-item a:hover {
+    color: #000000; /* Black color when hovering over the links */
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    display: none; /* Hide the dropdown menu by default */
+    position: absolute;
+    background-color: #db7777;
+    margin-top: 0px;
+    list-style: none;
+    padding: 10px 0;
+}
+
+/* Dropdown items styling */
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Change dropdown menu items' text color when user hovers over it */
+.dropdown-menu li a:hover {
+    color: #000000; /* Black color when hovering over dropdown items */
+}
+
+/* Show the dropdown menu when hovering over the Services item */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Add arrow indicator for Services dropdown */
+.dropdown > a::after {
+    content: ' \25BC'; /* Unicode for down-pointing arrow */
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .nav-list {
+        flex-direction: column; /* Stack the nav items vertically when max-width reaches <=600px*/
+    }
+    
+    .dropdown-menu {
+        position: static; /* Position dropdown relative to the parent */
+        margin-top: 0;
+    }
+    
+    .dropdown-menu li {
+        text-align: center;
+    }
+}
